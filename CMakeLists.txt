@@ -183,6 +183,7 @@ add_library(devilution STATIC
   Source/wave.cpp)
 
 SET(devilutionx_SRCS
+  SourceX/miniwin/androidinput.cpp
   SourceX/dx.cpp
   SourceX/miniwin/misc.cpp
   SourceX/miniwin/misc_io.cpp
@@ -271,6 +272,7 @@ else()
 	SDL2
 	SDL2_ttf
 	SDL2_mixer
+	SDL2_image
 	${CMAKE_CURRENT_SOURCE_DIR}/../app/libs/jni/${ANDROID_ARCH_NAME}/libsodiumjni.so)
 endif()
 
