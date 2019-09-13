@@ -212,7 +212,9 @@ target_include_directories(devilutionx PRIVATE
   3rdParty/Radon/Radon/include
   3rdParty/libsmacker)
 
-target_link_libraries(devilution PUBLIC Threads::Threads)
+target_link_libraries(devilution PUBLIC
+  Threads::Threads
+  SDL2::SDL2main)
 target_link_libraries(devilutionx PRIVATE
   devilution
   PKWare
