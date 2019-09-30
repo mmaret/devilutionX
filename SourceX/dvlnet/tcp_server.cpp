@@ -35,6 +35,20 @@ std::string tcp_server::localhost_self()
 	}
 }
 
+int tcp_server::stop()
+{
+	//acceptor->cancel();
+	//acceptor->close();
+	for (auto conn : connections) {
+		if (conn) {
+			eprintf("Cleaning cn\n");
+			drop_connection(conn);
+		}
+	}
+	connections.fill(nullptr);
+	return 0;
+}
+
 tcp_server::scc tcp_server::make_connection()
 {
 	return std::make_shared<client_connection>(ioc);

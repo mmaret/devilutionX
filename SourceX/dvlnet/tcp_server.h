@@ -23,6 +23,7 @@ public:
 	tcp_server(asio::io_context &ioc, std::string bindaddr,
 		unsigned short port, std::string pw);
 	std::string localhost_self();
+	int stop();
 
 private:
 	static constexpr int timeout_connect = 30;
